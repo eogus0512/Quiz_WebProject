@@ -61,7 +61,7 @@
         </div>
     </div>
 </nav><br><br><br><br><br>
-<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:40%; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px; border-radius:100px;">
+<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:40%; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px; border-radius:100px; border-width:3px; border-color:#558DF0;">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -95,7 +95,7 @@
 	<a class="btn" href="#" style="width:170px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>한국사</b></a>
 </div><br>
 <div class="container-xxl d-flex" style="width:800px; margin: auto;">
-	<a class="btn" href="#" style="width:400px; height:70px; border-width:3px;border-color:#558DF0;border-radius: 5px 0px 0px 5px; font-size:20pt; color:#558DF0; padding:12px"><b>랭킹</b></a>
+	<a class="btn" href="#" style="width:400px; height:70px; border-width:3px; border-color:#558DF0; border-radius: 5px 0px 0px 5px; font-size:20pt; color:#558DF0; padding:12px"><b>랭킹</b></a>
 	<a class="btn" href="#" style="width:400px; height:70px; border-radius: 0px 5px 5px 0px; font-size:20pt; color:white; background-color: #558DF0; padding:12px"><b>게시판</b></a>
 </div><br><br><br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
