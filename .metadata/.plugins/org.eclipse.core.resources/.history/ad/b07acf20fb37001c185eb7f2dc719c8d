@@ -13,17 +13,17 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #558DF0;">
     <div class="container-xxl d-flex align-items-md-center" style="width:1200px">
-        <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.svg" class="rounded float-start" width="120"></a>
+        <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.png" class="rounded float-start" width="120"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>퀴즈 시작하기</b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>퀴즈 만들기</b></a>
+                    <a class="nav-link" href="registerQuiz.jsp" style="font-size:15pt; color:white;"><b>퀴즈 만들기</b></a>
                 </li>
             </ul>
             <%
@@ -60,35 +60,27 @@
             %>
         </div>
     </div>
-</nav><br><br><br><br><br>
-<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:40%; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px; border-radius:100px">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active" id="first">
-            <img src="./img/quizRandom.png" class="d-block w-100" alt="첫번째">
-        </div>
-        <div class="carousel-item" id="second">
-            <img src="./img/quizRandom.png" class="d-block w-100" alt="두번째">
-        </div>
-        <div class="carousel-item" id="third">
-            <img src="./img/quizRandom.png" class="d-block w-100" alt="세번째">
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#mainSlide" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#mainSlide" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+</nav>
+<br><br><br><br>
+<div class="py-5 text-center">
+    <h2><b>장르</b></h2>
+</div>
+<div class="container col-md-6">
+    <form method="post" action="action/signUpAction.jsp">
+        <div class="row g-3">
+        	<div class="col-12" style="height:70px; padding:10px; background-color: gray; text-align:center; font-size:30px">
+                <label class="form-label">Q:독일의 수도는?</label>
+            </div>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>1. 로마</b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>2. 마추픽추</b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>3. 베를린</b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>4. 암스테르담</b></button>
+        </div><br><br>
+        
+    </form>
 </div>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
-    전화번호 : 010-9564-3580<br>
+    2017112079 윤대현<br>2017112066 정호종<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.
 </footer>
 <script src="./js/jquery.min.js"></script>

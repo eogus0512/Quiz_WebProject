@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>맛동국</title>
+    <title>동퀴콩</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="icon" href="./img/favicon.png">
@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>퀴즈 시작하기</b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>퀴즈 만들기</b></a>
+                    <a class="nav-link" href="registerQuiz.jsp" style="font-size:15pt; color:white;"><b>퀴즈 만들기</b></a>
                 </li>
             </ul>
             <%

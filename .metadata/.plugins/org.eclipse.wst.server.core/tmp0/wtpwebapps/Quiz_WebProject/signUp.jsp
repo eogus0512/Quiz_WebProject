@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>맛동국</title>
+    <title>동퀴콩</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="icon" href="./image/favicon.png">
@@ -81,7 +81,7 @@
                     <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>퀴즈 시작하기</b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>퀴즈 만들기</b></a>
+                    <a class="nav-link" href="registerQuiz.jsp" style="font-size:15pt; color:white;"><b>퀴즈 만들기</b></a>
                 </li>
             </ul>
             <%
@@ -121,7 +121,6 @@
 </nav>
 <br><br><br><br>
 <div class="py-5 text-center">
-    <img class="d-block mx-auto mb-4" src="./image/mainIcon.svg" alt="" width="150px">
     <h2><b>회원가입</b></h2>
 </div>
 <div class="container col-md-8 col-lg-6">
@@ -266,7 +265,7 @@
                 }
             </script>
         </div><br><br>
-        <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #558DF0; color:white"><b>회원가입</b></button>
+        <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #558DF0; color:white"><b>회원가입</b></button><br>
     </form>
 </div>
 
