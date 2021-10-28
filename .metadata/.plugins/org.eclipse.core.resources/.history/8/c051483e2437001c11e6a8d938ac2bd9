@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.io.PrintWriter"%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>동퀴콘</title>
+    <title>맛동국</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" href="./image/favicon.png">
 </head>
-<body>
+<body class="text-center">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #558DF0;">
     <div class="container-xxl d-flex align-items-md-center" style="width:1200px">
         <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.svg" class="rounded float-start" width="120"></a>
@@ -18,7 +17,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>퀴즈 시작하기</b></a>
                 </li>
@@ -60,33 +59,29 @@
             %>
         </div>
     </div>
-</nav><br><br><br><br><br>
-<div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:40%; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px; border-radius:100px">
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</nav>
+<br><br><br><br><br><br><br><br><br><br><br>
+<section class="container" style="max-width:500px;">
+<form method="post" action="action/loginAction.jsp">
+    <img src="./image/mainIcon.svg" class="rounded" width="250"><br><br>
+
+    <div class="form-floating">
+        <input type="ID" class="form-control" name="loginID" id="loginID" placeholder="ID" style="border-bottom-color: #FFFFFF; border-radius: 5px 5px 0px 0px;">
+        <label for="loginID">ID</label>
     </div>
-    <div class="carousel-inner">
-        <div class="carousel-item active" id="first">
-            <img src="./img/quizRandom.png" class="d-block w-100" alt="첫번째">
-        </div>
-        <div class="carousel-item" id="second">
-            <img src="./img/quizRandom.png" class="d-block w-100" alt="두번째">
-        </div>
-        <div class="carousel-item" id="third">
-            <img src="./img/quizRandom.png" class="d-block w-100" alt="세번째">
-        </div>
+    <div class="form-floating">
+        <input type="password" class="form-control" name="password" id="password" placeholder="Password" style="border-radius: 0px 0px 5px 5px;">
+        <label for="password">Password</label>
+    </div><br>
+    <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #FAF1D6">로그인</button>
+    <br><br>
+    <div class="gap-2 d-md-block col-12 d-flex">
+        <button class="btn btn col-5" type="button" style="background-color: #FFFFFF">아이디/비밀번호 찾기</button>
+        <button class="btn btn col-5" type="button" onclick="location.href='signUp.jsp'" style="background-color: #FFFFFF">회원가입</button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#mainSlide" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#mainSlide" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
+</form>
+</section>
+<br><br><br><br><br><br><br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     전화번호 : 010-9564-3580<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.
@@ -96,3 +91,4 @@
 <script src="./js/bootstrap.min.js"></script>
 </body>
 </html>
+

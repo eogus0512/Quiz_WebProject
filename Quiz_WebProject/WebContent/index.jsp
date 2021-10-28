@@ -13,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #558DF0;">
     <div class="container-xxl d-flex align-items-md-center" style="width:1200px">
-        <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.svg" class="rounded float-start" width="120"></a>
+        <a class="navbar-brand" href="index.jsp"><img src="./img/mainIcon.png" class="rounded float-start" width="120"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -99,7 +99,7 @@
 	<a class="btn" href="#" style="width:400px; height:70px; border-radius: 0px 5px 5px 0px; font-size:20pt; color:white; background-color: #558DF0; padding:12px"><b>게시판</b></a>
 </div><br><br><br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
-    전화번호 : 010-9564-3580<br>
+    2017112079 윤대현<br>2017112066 정호종<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.
 </footer>
 <script src="./js/jquery.min.js"></script>
