@@ -21,7 +21,7 @@
         }
         function checkPassword(){
 
-            var password = document.getElementById('password').value;
+            var password = document.getElementById('Password').value;
             var NB = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
             var SC = ["!","@","#","$","%"];
             var check_SC = 0, check_NB = 0;
@@ -46,10 +46,10 @@
             }
             if(check_NB == 0){
                 window.alert('숫자가 반드시 포함되어야 합니다.')
-                document.getElementById('password').value='';
+                document.getElementById('Password').value='';
             }
-            if(document.getElementById('password').value !='' && document.getElementById('passwordVerify').value!=''){
-                if(document.getElementById('password').value==document.getElementById('passwordVerify').value){
+            if(document.getElementById('Password').value !='' && document.getElementById('PasswordVerify').value!=''){
+                if(document.getElementById('Password').value==document.getElementById('PasswordVerify').value){
                     document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
                     document.getElementById('check').style.color='blue';
                 }
@@ -60,7 +60,7 @@
             }
         }
         function checkValue() {
-            if(document.userInfo.password.value != document.userInfo.passwordVerify.value) {
+            if(document.userInfo.Password.value != document.userInfo.PasswordVerify.value) {
                 alert("비밀번호가 일치하지 않습니다.");
                 return false;
             }
@@ -85,13 +85,13 @@
                 </li>
             </ul>
             <%
-                String loginID = null;
-                String userName = null;
+                String LoginID = null;
+                String UserName = null;
                 if(session.getAttribute("loginID") != null) {
-                    loginID = (String) session.getAttribute("loginID");
-                    userName = (String) session.getAttribute("userName");
+                    LoginID = (String) session.getAttribute("LoginID");
+                    UserName = (String) session.getAttribute("UserName");
                 }
-                if(loginID == null) {
+                if(LoginID == null) {
             %>
             <ul class="navbar-nav">
                 <a class="nav-link" aria-current="page" href="signUp.jsp" style="color:white">회원가입</a>
@@ -102,14 +102,14 @@
             %>
             <ul class="navbar-nav d-flex">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <%=userName %> 님
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white">
+                        <%=UserName %> 님
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
-                        <li><a class="dropdown-item" href="myPage.jsp">마이페이지</a></li>
-                        <li><a class="dropdown-item" href="#">1:1 문의</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="logout.jsp">로그아웃</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #558DF0;">
+                        <li><a class="dropdown-item" href="myPage.jsp" style="color: white">마이페이지</a></li>
+                        <li><a class="dropdown-item" href="#" style="color: white">1:1 문의</a></li>
+                        <li><hr class="dropdown-divider" style="color: white"></li>
+                        <li><a class="dropdown-item" href="logout.jsp" style="color: white">로그아웃</a></li>
                     </ul>
                 </li>
             </ul>
@@ -129,33 +129,33 @@
     <form method="post" action="action/signUpAction.jsp" name="userInfo" onsubmit="return checkValue()">
         <div class="row g-3">
             <div class="col-12">
-                <label for="userName" class="form-label">이름</label>
-                <input type="text" class="form-control" name="userName" id="userName" placeholder="" value="" required>
+                <label for="UserName" class="form-label">이름</label>
+                <input type="text" class="form-control" name="UserName" id="UserName" placeholder="" value="" required>
             </div>
             <div class="col-12">
-                <label for="loginID" class="form-label">아이디<span class="text-muted">(4자~12자리의 영문자 또는 영문자, 숫자 권장)</span></label>
+                <label for="LoginID" class="form-label">아이디<span class="text-muted">(4자~12자리의 영문자 또는 영문자, 숫자 권장)</span></label>
                 <div class="col-12 d-flex">
-                    <input type="id" class="form-control" name="loginID" id="loginID" placeholder="" style="margin-right: 10px" required>
+                    <input type="id" class="form-control" name="LoginID" id="LoginID" placeholder="" style="margin-right: 10px" required>
                     <input type="button" class="col-2 btn" onclick="openCheckID()" style="background-color: #558DF0; color:white; font-weight:bold" value="중복확인">
                 </div>
             </div>
             <div class="col-12">
-                <label for="password" class="form-label">비밀번호<span class="text-muted">(8자~20자리의 영문자, 숫자, 특수문자 반드시 포함)</span></label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="" onchange="checkPassword()" required>
+                <label for="Password" class="form-label">비밀번호<span class="text-muted">(8자~20자리의 영문자, 숫자, 특수문자 반드시 포함)</span></label>
+                <input type="password" class="form-control" name="Password" id="Password" placeholder="" onchange="checkPassword()" required>
             </div>
             <div class="col-12">
                 <label for="passwordVerify" class="form-label">비밀번호 재입력</label>
-                <input type="password" class="form-control" name="passwordVerify" id="passwordVerify" placeholder="" onchange="checkPassword()" required>
+                <input type="password" class="form-control" name="PasswordVerify" id="PasswordVerify" placeholder="" onchange="checkPassword()" required>
                 &nbsp;<span id="check"></span>
             </div>
             <div class="col-12">
-                <label for="mailAddress" class="form-label">이메일</label>
-                <input type="email" class="form-control" name="mailAddress" id="mailAddress" placeholder="" required>
+                <label for="Email" class="form-label">이메일</label>
+                <input type="email" class="form-control" name="Email" id="Email" placeholder="" required>
             </div>
             <div class="col-12 d-flex">
                 <div class="col-4">
-                    <label for="userAge" class="form-label">나이</label>
-                    <select class="form-select" name="userAge" id="userAge" required>
+                    <label for="Age" class="form-label">나이</label>
+                    <select class="form-select" name="Age" id="Age" required>
                         <option>선택</option>
                         <option>14</option>
                         <option>15</option>
@@ -177,16 +177,16 @@
                     </select>
                 </div>
                 <div class="col-7">
-                    <label for="phoneNumber" class="form-label"style="margin-left:10%;">전화번호</label>
-                    <input type="number" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="" style="margin-left:10%; width:104.5%" required>
+                    <label for="Phone" class="form-label"style="margin-left:10%;">전화번호</label>
+                    <input type="number" class="form-control" name="Phone" id="Phone" placeholder="" style="margin-left:10%; width:104.5%" required>
                 </div>
             </div>
             <hr class="my-4">
             <h4 class="mb-3"><b>부가 정보 입력</b></h4>
             <div class="col-12">
-                <label for="nickName" class="form-label">닉네임</label>
+                <label for="NickName" class="form-label">닉네임</label>
                 <div class="col-12 d-flex">
-                    <input type="text" class="form-control" name="nickName" id="nickName" placeholder="" style="margin-right: 10px" required>
+                    <input type="text" class="form-control" name="NickName" id="NickName" placeholder="" style="margin-right: 10px" required>
                     <button class="col-2 btn" style="background-color: #558DF0; color:white;" onclick="openCheckNickName()"><b>중복확인</b></button>
                 </div>
             </div>

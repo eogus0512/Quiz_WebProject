@@ -27,13 +27,13 @@
                 </li>
             </ul>
             <%
-                String loginID = null;
-                String userName = null;
+                String LoginID = null;
+                String UserName = null;
                 if(session.getAttribute("loginID") != null) {
-                    loginID = (String) session.getAttribute("loginID");
-                    userName = (String) session.getAttribute("userName");
+                    LoginID = (String) session.getAttribute("LoginID");
+                    UserName = (String) session.getAttribute("UserName");
                 }
-                if(loginID == null) {
+                if(LoginID == null) {
             %>
             <ul class="navbar-nav">
                 <a class="nav-link" aria-current="page" href="signUp.jsp" style="color:white">회원가입</a>
@@ -44,14 +44,14 @@
             %>
             <ul class="navbar-nav d-flex">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <%=userName %> 님
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white">
+                        <%=UserName %> 님
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #FAF1D6;">
-                        <li><a class="dropdown-item" href="myPage.jsp">마이페이지</a></li>
-                        <li><a class="dropdown-item" href="#">1:1 문의</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="logout.jsp">로그아웃</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #558DF0;">
+                        <li><a class="dropdown-item" href="myPage.jsp" style="color: white">마이페이지</a></li>
+                        <li><a class="dropdown-item" href="#" style="color: white">1:1 문의</a></li>
+                        <li><hr class="dropdown-divider" style="color: white"></li>
+                        <li><a class="dropdown-item" href="logout.jsp" style="color: white">로그아웃</a></li>
                     </ul>
                 </li>
             </ul>
