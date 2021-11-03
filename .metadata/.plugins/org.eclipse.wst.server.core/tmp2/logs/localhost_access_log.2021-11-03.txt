@@ -1,0 +1,5 @@
+127.0.0.1 - - [03/Nov/2021:17:27:33 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:27:34 +0900] "GET /Quiz_WebProject/index.jsp HTTP/1.1" 200 5413
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:27:35 +0900] "GET /Quiz_WebProject/login.jsp HTTP/1.1" 200 3513
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:27:50 +0900] "POST /Quiz_WebProject/action/loginAction.jsp HTTP/1.1" 500 56
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:27:50 +0900] "GET /Quiz_WebProject/index.jsp HTTP/1.1" 200 6054

@@ -143,3 +143,16 @@
 0:0:0:0:0:0:0:1 - - [03/Nov/2021:01:46:55 +0900] "GET /Quiz_WebProject/solveQuiz.jsp HTTP/1.1" 200 3943
 0:0:0:0:0:0:0:1 - - [03/Nov/2021:01:46:58 +0900] "GET /Quiz_WebProject/solveQuiz.jsp HTTP/1.1" 200 3943
 0:0:0:0:0:0:0:1 - - [03/Nov/2021:01:47:08 +0900] "GET /Quiz_WebProject/solveQuiz.jsp HTTP/1.1" 200 3943
+127.0.0.1 - - [03/Nov/2021:17:19:37 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:38 +0900] "GET /Quiz_WebProject/index.jsp HTTP/1.1" 200 5413
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:38 +0900] "GET /Quiz_WebProject/css/custom.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:38 +0900] "GET /Quiz_WebProject/css/bootstrap.min.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:38 +0900] "GET /Quiz_WebProject/js/popper.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:38 +0900] "GET /Quiz_WebProject/js/jquery.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:38 +0900] "GET /Quiz_WebProject/js/bootstrap.min.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:38 +0900] "GET /Quiz_WebProject/img/mainIcon.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:38 +0900] "GET /Quiz_WebProject/img/quizRandom.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:19:59 +0900] "GET /Quiz_WebProject/signUp.jsp HTTP/1.1" 200 13444
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:20:01 +0900] "GET /Quiz_WebProject/login.jsp HTTP/1.1" 200 3513
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:20:07 +0900] "POST /Quiz_WebProject/action/loginAction.jsp HTTP/1.1" 500 56
+0:0:0:0:0:0:0:1 - - [03/Nov/2021:17:20:07 +0900] "GET /Quiz_WebProject/index.jsp HTTP/1.1" 200 6054
