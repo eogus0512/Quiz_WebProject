@@ -3,13 +3,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import util.databaseUtil;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class userDAO {
     public static int login(String LoginID, String Password) {
         String SQL = "SELECT Password FROM USERINFO WHERE LoginID = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
-        ResultSet rs = null;
+        ResultSet rs = null; 
         try {
             conn = databaseUtil.getConnection();
             pstmt = conn.prepareStatement(SQL);
@@ -18,7 +20,7 @@ public class userDAO {
             if(rs.next()) {
                 if(rs.getString(1).equals(Password)) {
                     return 1;
-                }
+                } 
                 else {
                     return 0;
                 }
@@ -63,7 +65,9 @@ public class userDAO {
     }
 
     public static int join(String UserName, String LoginID, String Password, String Email, String Age, String Phone, String NickName, String Address) {
-    	String Date = "211103";
+    	LocalDate time = LocalDate.now();
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdd");
+    	String Date = time.format(formatter);
     	String SQL = "INSERT INTO USERINFO(UserName, LoginID, Password, Email, Age, Phone, NickName, Address, Date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {

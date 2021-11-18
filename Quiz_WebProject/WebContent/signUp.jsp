@@ -156,7 +156,7 @@
                 <div class="col-4">
                     <label for="Age" class="form-label">나이</label>
                     <select class="form-select" name="Age" id="Age" required>
-                        <option>선택</option>
+                        <option selected disabled hidden>선택</option>
                         <option>14</option>
                         <option>15</option>
                         <option>16</option>
