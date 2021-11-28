@@ -1,5 +1,8 @@
 package question;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import properties.DBConnect;
 
 public class QuestionDAO {
@@ -16,10 +19,10 @@ public class QuestionDAO {
 				instance.setFlagQuestion(rs);
 				return instance;
 				
-			} else //0이면 해당문제 없음
+			} else //0�씠硫� �빐�떦臾몄젣 �뾾�쓬
 				return new QuestionDTO(0);
 			
-		} catch (SQLException e) { 	//-2면 DB에러
+		} catch (SQLException e) { 	//-2硫� DB�뿉�윭
 			return new QuestionDTO(-2);
 		}
 	}
@@ -51,14 +54,14 @@ public class QuestionDAO {
 			else
 				return 0;
 		} catch (SQLException e) {
-			System.out.println("getMaxNumber에서 오류 !");
+			System.out.println("getMaxNumber�뿉�꽌 �삤瑜� !");
 			e.printStackTrace();
 			return -1;
 		}
 	}
 	
 	public static QuestionDTO getQuestion(int questionNumber, int type) {
-		//type의 값에 따라 1 = 수도, 2 = 상식, 3 = 역사
+		//type�쓽 媛믪뿉 �뵲�씪 1 = �닔�룄, 2 = �긽�떇, 3 = �뿭�궗
 		
 		String SQL;
 		switch(type) {
@@ -74,7 +77,7 @@ public class QuestionDAO {
 			SQL = "SELECT * FROM HISTORY_QUESTION WHERE HistoryQuestionNumber = ?";
 			break;
 			
-		default :	//-1이면 type 잘못 입력됨.
+		default :	//-1�씠硫� type �옒紐� �엯�젰�맖.
 			return new QuestionDTO(-1);
 		}
 		try {
@@ -88,10 +91,10 @@ public class QuestionDAO {
 				instance.setQuestion(rs);
 				return instance;
 				
-			} else //0이면 해당하는 문제 없음
+			} else //0�씠硫� �빐�떦�븯�뒗 臾몄젣 �뾾�쓬
 				return new QuestionDTO(0);
 			
-		} catch (SQLException e) { //-2면 DB에러
+		} catch (SQLException e) { //-2硫� DB�뿉�윭
 			return new QuestionDTO(-2);
 		}
 	}
@@ -128,10 +131,24 @@ public class QuestionDAO {
 			
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
-			System.out.println("makeQuestion에서 오류 발생");
+			System.out.println("makeQuestion�뿉�꽌 �삤瑜� 諛쒖깮");
 			e.printStackTrace();
 			
 			return -1;
 		}
+	}
+	public static int addScore(String Score, String LoginID) {
+		String SQL = "UPDATE USERINFO SET Score = Score + ? WHERE LoginID = ?";
+
+        try {
+            Connection conn = DBConnect.makeConn();
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, Score);
+            pstmt.setString(2, LoginID);
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
 	}
 }

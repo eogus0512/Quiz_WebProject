@@ -2,6 +2,7 @@
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import = "question.*" %>
 <%@ page import = "java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,12 +70,25 @@
 <div class="container col-md-4">
 	<br><br><br><br><Br><br>
 	<h1>당신의 점수는 10점 만점의 <%=request.getParameter("score") %>점!!</h1>
-<%
-	session.setAttribute("score", 0);
-	
-%>
-    
+
 </div>
+<%
+	String Score = request.getParameter("score");
+	String ID = String.valueOf(session.getAttribute("LoginID"));
+	int result;
+	
+	result = QuestionDAO.addScore(Score, ID);
+	if(result == 1) {
+		session.setAttribute("score", 0);
+	} else {
+		PrintWriter script = response.getWriter();
+	    script.println("<script>");
+	    script.println("alert('데이터베이스 오류');");
+	    script.println("history.back();");
+	    script.println("</script>");
+	    script.close();
+	}
+%>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.
