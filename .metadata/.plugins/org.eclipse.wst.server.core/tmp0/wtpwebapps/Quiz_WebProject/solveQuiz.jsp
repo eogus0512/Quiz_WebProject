@@ -33,19 +33,69 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="icon" href="./img/favicon.png">
-    <script>
-    	function compare(guess)  {
+    <style>
+	    .circle {
+	      position: fixed;
+	      transform: translateX(-50%) translateY(-50%);
+	      border-radius: 50%;
+	      border: 50px solid blue;
+	    }
+	    .digonal1 {
+	    	position: fixed;
+			background-color: red;
+			transform: rotate(-45deg);
+		}
+		.digonal2 {
+	    	position: fixed;
+			background-color: red;
+			transform: rotate(45deg);
+		}
+	</style>
+	<script>
+		function showCircle() {
+			let div = document.createElement('div');
+			div.style.width = 0;
+			div.style.height = 0;
+			div.style.left = '50%';
+			div.style.top = '50%';
+			div.className = 'circle';
+			document.body.append(div);
+			div.style.width = '600px';
+			div.style.height = '600px';
+		}
+		function showDiagonal() {
+			let div1 = document.createElement('div1');
+			div1.style.width = 0;
+			div1.style.height = 0;
+			div1.style.left = '50%';
+			div1.style.top = '20%';
+			div1.className = 'digonal1';
+			document.body.append(div1);
+			div1.style.width = '50px';
+			div1.style.height = '600px';
+			
+			let div2 = document.createElement('div2');
+			div2.style.width = 0;
+			div2.style.height = 0;
+			div2.style.left = '50%';
+			div2.style.top = '20%';
+			div2.className = 'digonal2';
+			document.body.append(div2);
+			div2.style.width = '50px';
+			div2.style.height = '600px';
+		}
+		function compare(guess)  {
     		var answer="<%=String.valueOf(qList.get(qnum).answer)%>";
     		var score=<%=Integer.parseInt(String.valueOf(session.getAttribute("score")))%>;;
     		if(guess==answer) {
+    			showCircle();
     			score = score + 1;
-    			alert("O" + score);
     		} else {
-    			alert("X");
+    			showDiagonal();
     		}
     		document.getElementById('score').value=score;
     	}
-    </script>
+	</script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #558DF0;">
@@ -141,6 +191,7 @@
             <input type="hidden" id="score" name="score">
         </div><br><br>
     </form>
+    <button onclick="showCircle()">showCircle()</button>
 </div>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>
