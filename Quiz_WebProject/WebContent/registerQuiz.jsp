@@ -116,7 +116,7 @@
 
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>
-    Copyright &copy; 2021 ddolI98 All Rights Reserved.
+    Copyright &copy; 2021 동퀴콘개발팀 All Rights Reserved.
 </footer>
 <script src="./js/jquery.min.js"></script>
 <script src="./js/popper.js"></script>
