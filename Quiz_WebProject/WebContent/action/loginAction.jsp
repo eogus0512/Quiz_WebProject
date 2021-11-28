@@ -16,12 +16,13 @@
     if(request.getParameter("loginID") != null) {
         loginID = (String) request.getParameter("loginID");
     }
+    
     if(request.getParameter("password") != null) {
         password = (String) request.getParameter("password");
     }
-    userDAO userdao = new userDAO();
-    int result = userdao.login(loginID, password);
-    String[] info = userdao.getInfo(loginID);
+    
+    int result = userDAO.login(loginID, password);
+    String[] info = userDAO.getInfo(loginID);
     if(result == 1) {
         session.setAttribute("loginID", loginID);
         PrintWriter script = response.getWriter();
