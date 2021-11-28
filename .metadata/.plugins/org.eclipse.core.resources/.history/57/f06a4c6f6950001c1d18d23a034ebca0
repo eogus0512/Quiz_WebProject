@@ -69,10 +69,10 @@ public class userDAO {
     }
 
     public static int join(String UserName, String LoginID, String Password, String Email, String Age, String Phone, String NickName, String Address) {
-       LocalDate time = LocalDate.now();
-       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdd");
-       String Date = time.format(formatter);
-       String SQL = "INSERT INTO USERINFO(UserName, LoginID, pwd, Email, Age, Phone, NickName, Address, SignedDay) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    	LocalDate time = LocalDate.now();
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdd");
+    	String Date = time.format(formatter);
+    	String SQL = "INSERT INTO USERINFO(UserName, LoginID, pwd, Email, Age, Phone, NickName, Address, SignedDay) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             Connection conn = DBConnect.makeConn();
@@ -148,25 +148,25 @@ public class userDAO {
     }
     
     public static ArrayList<userDTO> getRanking() {
-       ArrayList<userDTO> userList = new ArrayList<userDTO>();
-       String SQL = "SELECT * FROM USERINFO ORDER BY Score DESC, SignedDay ASC";
-       
-       try {
-          Connection conn = DBConnect.makeConn();
-          Statement stmt = conn.createStatement();
-          ResultSet rs = stmt.executeQuery(SQL);
-          
-          while (rs.next()) {
-             userDTO instance = new userDTO();
-             instance.setUserDTO(rs);
-             userList.add(instance);
-          }
-          
-          return userList;
-       } catch (SQLException e) {
-          System.out.println("getRankingø°º≠ ø¿∑˘ πﬂª˝");
-          e.printStackTrace();
-          return null;
-       }
+    	ArrayList<userDTO> userList = new ArrayList<userDTO>();
+    	String SQL = "SELECT * FROM USERINFO ORDER BY Score DESC, SignedDay ASC";
+    	
+    	try {
+    		Connection conn = DBConnect.makeConn();
+    		Statement stmt = conn.createStatement();
+    		ResultSet rs = stmt.executeQuery(SQL);
+    		
+    		while (rs.next()) {
+    			userDTO instance = new userDTO();
+    			instance.setUserDTO(rs);
+    			userList.add(instance);
+    		}
+    		
+    		return userList;
+    	} catch (SQLException e) {
+    		System.out.println("getRankingÏóêÏÑú Ïò§Î•ò Î∞úÏÉù");
+    		e.printStackTrace();
+    		return null;
+    	}
     }
 }
