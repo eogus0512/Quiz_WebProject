@@ -1,15 +1,16 @@
 package user;
+import java.sql.*;
 
 public class userDTO {
-    String LoginID;
-    String Password;
-    String NickName;
-    String Email;
-    String UserName;
-    String Age;
-    String Phone;
-    String Address;
-    String Date;
+    public String LoginID;
+    public String Password;
+    public String NickName;
+    public String Email;
+    public String UserName;
+    public String Age;
+    public String Phone;
+    public String Address;
+    public String Date;
     
     public String getLoginID() {
         return LoginID;
@@ -73,5 +74,17 @@ public class userDTO {
 
     public void setAddress(String Address) {
         this.Address = Address;
+    }
+    
+    public void setUserDTO(ResultSet rs) throws SQLException {
+    	this.UserName = rs.getString(1);
+    	this.LoginID = rs.getString(2);
+    	this.Password = rs.getString(3);
+    	this.Email = rs.getString(4);
+    	this.Age = rs.getString(5);
+    	this.Phone = rs.getString(6);
+    	this.NickName = rs.getString(7);
+    	this.Address = rs.getString(8);
+    	this.Date = rs.getString(9);
     }
 }
