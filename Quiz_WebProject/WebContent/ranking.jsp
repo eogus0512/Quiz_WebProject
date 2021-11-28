@@ -65,8 +65,6 @@
 <%
 	@SuppressWarnings("unchecked")
 	ArrayList<userDTO> userList = (ArrayList<userDTO>)(session.getAttribute("userList"));
-
-	
 	
 %>
 <br><br><br><br><br><br><br><br><br><br><br>
