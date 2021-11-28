@@ -7,6 +7,14 @@
 	
 //public static void main(String[] args)
 	request.setCharacterEncoding("UTF-8");
+
+	String userName = String.valueOf(session.getAttribute("UserName"));
+	
+	if (!userName.equals(null)) {
+		response.sendRedirect("../login.jsp");
+		return;
+	}
+	
 	//문제 갯수 지정
 	final int COUNT = 10;
 
