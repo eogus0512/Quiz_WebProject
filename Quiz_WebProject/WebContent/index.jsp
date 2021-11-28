@@ -61,6 +61,22 @@
         </div>
     </div>
 </nav><br><br><br><br><br>
+
+	<script type = "text/javascript">	
+<%
+	String result = String.valueOf(session.getAttribute("result"));
+	if (result.equals("success")) {	
+%>
+			alert("문제가 성공적으로 등록되었습니다");
+<%
+	} else if (result.equals("failed")) {
+%>
+			alert("문제 등록에 실패했습니다");
+<%
+	}
+	session.removeAttribute("result");
+%>
+	</script>
 <div id="mainSlide" class="carousel slide carousel-fade" data-bs-ride="carousel" style="width:40%; margin: auto; display: flex; margin-bottom:40px; margin-top: 100px; border-radius:100px; border-width:3px; border-color:#558DF0;">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#mainSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

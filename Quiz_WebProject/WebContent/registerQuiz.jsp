@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>µ¿ÄûÄÜ</title>
+    <title>ë™í€´ì½˜</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="icon" href="./img/favicon.png">
@@ -20,10 +20,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>ÄûÁî ½ÃÀÛÇÏ±â</b></a>
+                    <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>í€´ì¦ˆ ì‹œìž‘í•˜ê¸°</b></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="registerQuiz.jsp" style="font-size:15pt; color:white;"><b>ÄûÁî ¸¸µé±â</b></a>
+                    <a class="nav-link" href="registerQuiz.jsp" style="font-size:15pt; color:white;"><b>í€´ì¦ˆ ë§Œë“¤ê¸°</b></a>
                 </li>
             </ul>
             <%
@@ -36,8 +36,8 @@
                 if(LoginID == null) {
             %>
             <ul class="navbar-nav">
-                <a class="nav-link" aria-current="page" href="signUp.jsp" style="color:white">È¸¿ø°¡ÀÔ</a>
-                <a class="btn btn-outline-primary" href="login.jsp" style="border-color: white; color: white">·Î±×ÀÎ</a>
+                <a class="nav-link" aria-current="page" href="signUp.jsp" style="color:white">íšŒì›ê°€ìž…</a>
+                <a class="btn btn-outline-primary" href="login.jsp" style="border-color: white; color: white">ë¡œê·¸ì¸</a>
             </ul>
             <%
             } else {
@@ -45,13 +45,13 @@
             <ul class="navbar-nav d-flex">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white">
-                        <%=UserName %> ´Ô
+                        <%=UserName %> ë‹˜
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #558DF0;">
-                        <li><a class="dropdown-item" href="myPage.jsp" style="color: white">¸¶ÀÌÆäÀÌÁö</a></li>
-                        <li><a class="dropdown-item" href="#" style="color: white">1:1 ¹®ÀÇ</a></li>
+                        <li><a class="dropdown-item" href="myPage.jsp" style="color: white">ë§ˆì´íŽ˜ì´ì§€</a></li>
+                        <li><a class="dropdown-item" href="#" style="color: white">1:1 ë¬¸ì˜</a></li>
                         <li><hr class="dropdown-divider" style="color: white"></li>
-                        <li><a class="dropdown-item" href="logout.jsp" style="color: white">·Î±×¾Æ¿ô</a></li>
+                        <li><a class="dropdown-item" href="logout.jsp" style="color: white">ë¡œê·¸ì•„ì›ƒ</a></li>
                     </ul>
                 </li>
             </ul>
@@ -63,60 +63,59 @@
 </nav>
 <br><br><br><br>
 <div class="py-5 text-center">
-    <h2><b>ÄûÁîµî·Ï</b></h2>
+    <h2><b>í€´ì¦ˆë“±ë¡</b></h2>
 </div>
 <div class="container col-md-8 col-lg-6">
     <hr class="my-4">
-    <form method="post" action="action/signUpAction.jsp">
+    <form method="post" action="action/registerQuestion.jsp">
         <div class="row g-3">
             <div class="col-12">
-                <label for="genre" class="form-label">Àå¸£</label>
-                <select class="form-select" name="genre" id="genre" required>
-                    <option>¼±ÅÃ</option>
-                    <option>±¹±â</option>
-                    <option>¼öµµ</option>
-                    <option>»ó½Ä</option>
-                    <option>³Í¼¾½º</option>
-                    <option>¿ª»ç</option>
+                <label for="genre" class="form-label">ìž¥ë¥´</label>
+                <select class="form-select" name="type" id="type" required>
+                    <option disable hidden>ì„ íƒ</option>
+                    <option value = "1">ìˆ˜ë„</option>
+                    <option value = "2">ìƒì‹</option>
+                    <option>ë„Œì„¼ìŠ¤</option>
+                    <option value = "3">ì—­ì‚¬</option>
                 </select>
             </div>
             <div class="col-12">
-                <label for="question" class="form-label">¹®Á¦</label>
-                <input type="text" class="form-control" name="question" id="question" placeholder="" value="" required>
+                <label for="question" class="form-label">ë¬¸ì œ</label>
+                <input type="text" class="form-control" name="questionContent" id="questionContent" placeholder="ë¬¸ì œ ë‚´ìš©ì„ ê¸°ìž…í•˜ì„¸ìš”" value="" required>
             </div>
             <div class="col-12">
-                <label for="first" class="form-label">1¹ø</label>
-                <input type="text" class="form-control" name="first" id="first" placeholder="" value="" required>
+                <label for="first" class="form-label">1ë²ˆ</label>
+                <input type="text" class="form-control" name="example1" id="example1" placeholder="1ë²ˆ ë³´ê¸°" value="" required>
             </div>
             <div class="col-12">
-                <label for="second" class="form-label">2¹ø</label>
-                <input type="text" class="form-control" name="second" id="second" placeholder="" value="" required>
+                <label for="second" class="form-label">2ë²ˆ</label>
+                <input type="text" class="form-control" name="example2" id="example2" placeholder="2ë²ˆ ë³´ê¸°" value="" required>
             </div>
             <div class="col-12">
-                <label for="third" class="form-label">3¹ø</label>
-                <input type="text" class="form-control" name="third" id="third" placeholder="" value="" required>
+                <label for="third" class="form-label">3ë²ˆ</label>
+                <input type="text" class="form-control" name="example3" id=""example3"" placeholder="3ë²ˆ ë³´ê¸°" value="" required>
             </div>
             <div class="col-12">
-                <label for="fourth" class="form-label">4¹ø</label>
-                <input type="text" class="form-control" name="fourth" id="fourth" placeholder="" value="" required>
+                <label for="fourth" class="form-label">4ë²ˆ</label>
+                <input type="text" class="form-control" name="example4" id="example4" placeholder="4ë²ˆ ë³´ê¸°" value="" required>
             </div>
             <div class="col-12">
-                <label for="answer" class="form-label">Àå¸£</label>
+                <label for="answer" class="form-label">ì •ë‹µ</label>
                 <select class="form-select" name="answer" id="answer" required>
-                    <option>¼±ÅÃ</option>
-                    <option>1¹ø</option>
-                    <option>2¹ø</option>
-                    <option>3¹ø</option>
-                    <option>4¹ø</option>
+                    <option disable hidden>ì„ íƒ</option>
+                    <option value = "1">1ë²ˆ</option>
+                    <option value = "2">2ë²ˆ</option>
+                    <option value = "3">3ë²ˆ</option>
+                    <option value = "4">4ë²ˆ</option>
                 </select>
             </div>
         </div><br><br>
-        <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #558DF0; color:white"><b>µî·ÏÇÏ±â</b></button><br>
+        <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #558DF0; color:white"><b>ë“±ë¡í•˜ê¸°</b></button><br>
     </form>
 </div>
 
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
-    2017112079 À±´ëÇö<br>2017112066 Á¤È£Á¾<br>
+    2017112079 ìœ¤ëŒ€í˜„<br>2017112066 ì •í˜¸ì¢…<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.
 </footer>
 <script src="./js/jquery.min.js"></script>

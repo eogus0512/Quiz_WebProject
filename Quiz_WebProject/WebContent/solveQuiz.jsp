@@ -72,12 +72,7 @@
 	String type = String.valueOf(session.getAttribute("type"));
 	int qnum = Integer.parseInt(String.valueOf(session.getAttribute("qnum")));
 	
-	System.out.println("전송 후 문제 내용");
-	System.out.println(qList.get(qnum));
-	
 	QuestionDTO instance = qList.get(qnum);
-	
-	System.out.println(instance.questionNumber);
 	
 	//qList.get(i).answer 이거 하면 답 번호 나옴
 %>
