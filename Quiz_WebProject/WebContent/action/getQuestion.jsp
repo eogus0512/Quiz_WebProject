@@ -13,6 +13,7 @@
 	//qtype은 Link에서 getQuestion.jsp?type=n 형식으로 전달하자
 	int qtype = Integer.parseInt(request.getParameter("type"));
 	int type = qtype;
+	System.out.println("qtype : " + qtype);
 	
 	//중복되는 문제 번호가 존재하는지 체크하기 위함
 	ArrayList<Integer> check = new ArrayList<Integer>();
@@ -21,6 +22,7 @@
 	ArrayList<QuestionDTO> questionList = new ArrayList<QuestionDTO>();
 	
 	for (int i = 0; i < COUNT; i++) {
+		System.out.println("for문 " + i + "번째");
 		
 		//4면 랜덤이니 문제 종류 랜덤하게 섞어줘야함
 		if (qtype == 4)
@@ -33,9 +35,11 @@
 		//국기는 문제가 37번까지 있음.
 		case 0 : 
 			//중복되는 문제번호 아닐때까지 계속 뽑음
-			while(!check.contains(questionNumber)) {
+			do {
 				questionNumber = (int)((Math.random()) * 37 - 1);
-			}
+				System.out.println("문제번호 : " + questionNumber + " 포함여부 : " + check.contains(questionNumber));
+			} while(check.contains(questionNumber));
+			QuestionDTO instance = new QuestionDTO();
 			questionList.add(QuestionDAO.getFlagQuestion(questionNumber));
 			break;
 			
@@ -43,9 +47,10 @@
 		case 2 : 
 		case 3 :
 			//중복되는 문제번호 아닐때까지 계속 뽑음
-			while(!check.contains(questionNumber)) {
-				questionNumber = (int)((Math.random() * 21 - 1));
-			}
+			do {
+				questionNumber = (int)((Math.random()) * 21 - 1);
+				System.out.println("문제번호 : " + questionNumber + " 포함여부 : " + check.contains(questionNumber));
+			} while(check.contains(questionNumber));
 			questionList.add(QuestionDAO.getQuestion(questionNumber, type));
 			break;
 			
@@ -55,8 +60,7 @@
 		check.add(questionNumber);
 	}
 	
-	//questionList라는 ArrayList<QuestionDTO>형식으로 request에 저장.
-	//받을때는 getParameter가 아닌 getAttribute로 받아야 함
+	//questionList라는 ArrayList<QuestionDTO>형식으로 session에 저장.
 	session.setAttribute("questionList", questionList);
 	
 	switch(qtype) {
@@ -69,6 +73,9 @@
 	
 	session.setAttribute("qnum", "0");
 	
+	System.out.println("전송 전 문제내용");
+	System.out.println(questionList.get(0).questionNumber);
+	
 	//문제풀이 페이지로 이동
-	request.getRequestDispatcher("../solveQuiz.jsp").forward(request, response);
+	response.sendRedirect("../solveQuiz.jsp");
 %>

@@ -23,7 +23,7 @@ public class QuestionDTO {
 	public int answer = 0;
 	
 	//FlagQuestion의 경우에는 type을 true로 변경해줘야함
-	boolean type = false;
+	public boolean type = false;
 	
 	public void setFlagQuestion(ResultSet rs) throws SQLException{
 		this.questionNumber = rs.getInt(1);

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="icon" href="./img/favicon.png">
+    <script type = "text/javascript">
+    	
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #558DF0;">
@@ -69,6 +72,13 @@
 	String type = String.valueOf(session.getAttribute("type"));
 	int qnum = Integer.parseInt(String.valueOf(session.getAttribute("qnum")));
 	
+	System.out.println("전송 후 문제 내용");
+	System.out.println(qList.get(qnum));
+	
+	QuestionDTO instance = qList.get(qnum);
+	
+	System.out.println(instance.questionNumber);
+	
 	//qList.get(i).answer 이거 하면 답 번호 나옴
 %>
 <br><br><br><br>
@@ -76,15 +86,29 @@
     <h2><b><%= type %></b></h2>
 </div>
 <div class="container col-md-4">
-	<div class="col-12" style="height:150px; padding:50px; background-color: #EAEAEA; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
-        <label class="form-label">Q : <%=qList.get(qnum).questionContent %></label>
-    </div><br><br><br><br>
+	<%
+		if (qList.get(qnum).type) {
+			
+	%>
+		<div class="col-12" style="height:150px; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
+			<img src = "<%=qList.get(qnum).questionContent%>" style = "width : 200px;">
+		</div>
+	<%
+		} else {
+	%>
+		<div class="col-12" style="height:150px; padding:50px; background-color: #EAEAEA; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
+			 <label class="form-label">Q : <%=qList.get(qnum).questionContent %></label>
+		</div>		
+    <%
+		}
+    %>
+		<br><br><br><br>
     <form method="post" action="#">
         <div class="row g-3">
-            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>1. <%=qList.get(qnum).example1 %></b></button>
-            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>2. <%=qList.get(qnum).example2 %></b></button>
-            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>3. <%=qList.get(qnum).example3 %></b></button>
-            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>4. <%=qList.get(qnum).example4 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "1"><b>1. <%=qList.get(qnum).example1 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "2"><b>2. <%=qList.get(qnum).example2 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "3"><b>3. <%=qList.get(qnum).example3 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "4"><b>4. <%=qList.get(qnum).example4 %></b></button>
         </div><br><br>
     </form>
 </div>
