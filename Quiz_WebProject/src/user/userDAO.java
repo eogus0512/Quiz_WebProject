@@ -2,7 +2,7 @@ package user;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import util.databaseUtil;
+import properties.DBConnect;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -13,7 +13,7 @@ public class userDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null; 
         try {
-            conn = databaseUtil.getConnection();
+            conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, LoginID);
             rs = pstmt.executeQuery();
@@ -43,7 +43,7 @@ public class userDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
-            conn = databaseUtil.getConnection();
+            conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, LoginID);
             rs = pstmt.executeQuery();
@@ -71,7 +71,7 @@ public class userDAO {
     	String SQL = "INSERT INTO USERINFO(UserName, LoginID, Password, Email, Age, Phone, NickName, Address, Date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
-            Connection conn = databaseUtil.getConnection();
+            Connection conn = DBConnect.makeConn();
             PreparedStatement pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, UserName);
             pstmt.setString(2, LoginID);
@@ -95,7 +95,7 @@ public class userDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
-            conn = databaseUtil.getConnection();
+            conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, LoginID);
             rs = pstmt.executeQuery();
@@ -112,7 +112,7 @@ public class userDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
-            conn = databaseUtil.getConnection();
+            conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
             pstmt.setString(1, NickName);
             rs = pstmt.executeQuery();
@@ -130,7 +130,7 @@ public class userDAO {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         try {
-            conn = databaseUtil.getConnection();
+            conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
             pstmt.setInt(1, UserID);
             rs = pstmt.executeQuery();

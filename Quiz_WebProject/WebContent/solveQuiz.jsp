@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.io.PrintWriter"%>
+<%@ page import = "question.*" %>
+<%@ page import = "java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,22 +63,27 @@
         </div>
     </div>
 </nav>
+<%
+	@SuppressWarnings("unchecked")
+	ArrayList<QuestionDTO> qList = (ArrayList<QuestionDTO>)session.getAttribute("questionList");
+	String type = String.valueOf(session.getAttribute("type"));
+	int qnum = Integer.parseInt(String.valueOf(session.getAttribute("qnum")));
+%>
 <br><br><br><br>
 <div class="py-5 text-center">
-    <h2><b>장르</b></h2>
+    <h2><b><%= type %></b></h2>
 </div>
 <div class="container col-md-4">
 	<div class="col-12" style="height:150px; padding:50px; background-color: #EAEAEA; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
-        <label class="form-label">Q : 독일의 수도는?</label>
+        <label class="form-label">Q : <%=qList.get(qnum).questionContent %></label>
     </div><br><br><br><br>
     <form method="post" action="#">
         <div class="row g-3">
-            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>1. 로마</b></button>
-            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>2. 마추픽추</b></button>
-            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>3. 베를린</b></button>
-            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>4. 암스테르담</b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>1. <%=qList.get(qnum).example1 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>2. <%=qList.get(qnum).example2 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>3. <%=qList.get(qnum).example3 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0"><b>4. <%=qList.get(qnum).example4 %></b></button>
         </div><br><br>
-        
     </form>
 </div>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">

@@ -5,7 +5,7 @@ import java.sql.*;
 
 public class Test {
 	public static void main(String[] args) {
-		String SQL = "SELECT * FROM HISTORY_QUESTION";
+		String SQL = "SELECT * FROM CAPITAL_QUESTION";
 		try {
 			Connection conn = DBConnect.makeConn();
 			Statement stmt = conn.createStatement();
