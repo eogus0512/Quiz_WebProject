@@ -33,7 +33,7 @@
 	    .circle {
 			position: fixed;
 			transition-property: width, height, margin-left, margin-top;
-			transition-duration: 0.5s;
+			transition-duration: 1s;
 			transform: translateX(-50%) translateY(-50%);
 			border-radius: 50%;
 			border: 50px solid blue;
@@ -191,7 +191,7 @@
             <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "4" onclick="compare(this.value)"><b>4. <%=qList.get(qnum).example4 %></b></button>
             <input type="hidden" id="score" name="score">
     <%
-    		Thread.sleep(1500);
+    		Thread.sleep(2000);
     %>
         </div><br><br>
     </form>

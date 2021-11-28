@@ -2,7 +2,6 @@
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import = "question.*" %>
 <%@ page import = "java.util.ArrayList" %>
-
 <!DOCTYPE html>
 <html>
 <head>

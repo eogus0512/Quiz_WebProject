@@ -13,10 +13,6 @@
 		score = Integer.parseInt(request.getParameter("score"));
 	}
 	session.setAttribute("score", score);
-	System.out.println(request.getParameter("score"));
-	
-	System.out.println("전송 후 문제 내용");
-	System.out.println(qList.get(qnum));
 	
 	QuestionDTO instance = qList.get(qnum);
 	
@@ -35,10 +31,12 @@
     <link rel="icon" href="./img/favicon.png">
     <style>
 	    .circle {
-	      position: fixed;
-	      transform: translateX(-50%) translateY(-50%);
-	      border-radius: 50%;
-	      border: 50px solid blue;
+			position: fixed;
+			transition-property: width, height, margin-left, margin-top;
+			transition-duration: 0.5s;
+			transform: translateX(-50%) translateY(-50%);
+			border-radius: 50%;
+			border: 50px solid blue;
 	    }
 	    .digonal1 {
 	    	position: fixed;
@@ -54,14 +52,17 @@
 	<script>
 		function showCircle() {
 			let div = document.createElement('div');
-			div.style.width = 0;
-			div.style.height = 0;
-			div.style.left = '50%';
-			div.style.top = '50%';
-			div.className = 'circle';
-			document.body.append(div);
-			div.style.width = '600px';
-			div.style.height = '600px';
+		    div.style.width = 0;
+		    div.style.height = 0;
+		    div.style.left = '50%';
+		    div.style.top = '50%';
+		    div.className = 'circle';
+		    document.body.append(div);
+
+		    setTimeout(() => {
+		      div.style.width = '600px';
+		      div.style.height = '600px';
+		    }, 0);
 		}
 		function showDiagonal() {
 			let div1 = document.createElement('div1');
@@ -189,9 +190,11 @@
             <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "3" onclick="compare(this.value)"><b>3. <%=qList.get(qnum).example3 %></b></button>
             <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "4" onclick="compare(this.value)"><b>4. <%=qList.get(qnum).example4 %></b></button>
             <input type="hidden" id="score" name="score">
+    <%
+    		Thread.sleep(1500);
+    %>
         </div><br><br>
     </form>
-    <button onclick="showCircle()">showCircle()</button>
 </div>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>

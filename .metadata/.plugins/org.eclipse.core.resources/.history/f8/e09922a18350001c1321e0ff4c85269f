@@ -52,17 +52,14 @@
 	<script>
 		function showCircle() {
 			let div = document.createElement('div');
-		    div.style.width = 0;
-		    div.style.height = 0;
-		    div.style.left = '50%';
-		    div.style.top = '50%';
-		    div.className = 'circle';
-		    document.body.append(div);
-
-		    setTimeout(() => {
-		      div.style.width = '600px';
-		      div.style.height = '600px';
-		    }, 0);
+			div.style.width = 0;
+			div.style.height = 0;
+			div.style.left = '50%';
+			div.style.top = '50%';
+			div.className = 'circle';
+			document.body.append(div);
+			div.style.width = '600px';
+			div.style.height = '600px';
 		}
 		function showDiagonal() {
 			let div1 = document.createElement('div1');
@@ -191,7 +188,7 @@
             <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "4" onclick="compare(this.value)"><b>4. <%=qList.get(qnum).example4 %></b></button>
             <input type="hidden" id="score" name="score">
     <%
-    		Thread.sleep(1500);
+    		Thread.sleep(1000);
     %>
         </div><br><br>
     </form>
