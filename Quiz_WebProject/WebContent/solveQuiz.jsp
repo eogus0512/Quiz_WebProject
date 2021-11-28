@@ -13,10 +13,6 @@
 		score = Integer.parseInt(request.getParameter("score"));
 	}
 	session.setAttribute("score", score);
-	System.out.println(request.getParameter("score"));
-	
-	System.out.println("전송 후 문제 내용");
-	System.out.println(qList.get(qnum));
 	
 	QuestionDTO instance = qList.get(qnum);
 	
