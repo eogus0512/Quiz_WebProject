@@ -68,6 +68,8 @@
 	ArrayList<QuestionDTO> qList = (ArrayList<QuestionDTO>)session.getAttribute("questionList");
 	String type = String.valueOf(session.getAttribute("type"));
 	int qnum = Integer.parseInt(String.valueOf(session.getAttribute("qnum")));
+	
+	//qList.get(i).answer 이거 하면 답 번호 나옴
 %>
 <br><br><br><br>
 <div class="py-5 text-center">
