@@ -1,10 +1,14 @@
 package user;
 import java.sql.Connection;
+import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import properties.DBConnect;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class userDAO {
     public static int login(String LoginID, String Password) {
@@ -68,7 +72,7 @@ public class userDAO {
     	LocalDate time = LocalDate.now();
     	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdd");
     	String Date = time.format(formatter);
-    	String SQL = "INSERT INTO USERINFO(UserName, LoginID, Password, Email, Age, Phone, NickName, Address, Date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    	String SQL = "INSERT INTO USERINFO(UserName, LoginID, pwd, Email, Age, Phone, NickName, Address, SignedDay) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             Connection conn = DBConnect.makeConn();
@@ -142,5 +146,27 @@ public class userDAO {
         }
         return Nickname;
     }
-
+    
+    public static ArrayList<userDTO> getRanking() {
+    	ArrayList<userDTO> userList = new ArrayList<userDTO>();
+    	String SQL = "SELECT * FROM USERINFO ORDER BY Rank DESC, Date ASC";
+    	
+    	try {
+    		Connection conn = DBConnect.makeConn();
+    		Statement stmt = conn.createStatement();
+    		ResultSet rs = stmt.executeQuery(SQL);
+    		
+    		while (rs.next()) {
+    			userDTO instance = new userDTO();
+    			instance.setUserDTO(rs);
+    			userList.add(instance);
+    		}
+    		
+    		return userList;
+    	} catch (SQLException e) {
+    		System.out.println("getRanking에서 오류 발생");
+    		e.printStackTrace();
+    		return null;
+    	}
+    }
 }

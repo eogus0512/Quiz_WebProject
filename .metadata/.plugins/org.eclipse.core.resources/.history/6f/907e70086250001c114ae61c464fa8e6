@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/custom.css">
     <link rel="icon" href="./img/favicon.png">
+<<<<<<< HEAD
     <script>
     	function compare(guess)  {
     		var answer="<%=String.valueOf(qList.get(qnum).answer)%>";
@@ -45,6 +46,11 @@
     		}
     		document.getElementById('score').value=score;
     	}
+=======
+    <script type = "text/javascript">
+    	
+>>>>>>> 1d58a0513c404af732a4eac71b62b002f2f15dba
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #558DF0;">
@@ -97,6 +103,19 @@
         </div>
     </div>
 </nav>
+<<<<<<< HEAD
+=======
+<%
+	@SuppressWarnings("unchecked")
+	ArrayList<QuestionDTO> qList = (ArrayList<QuestionDTO>)session.getAttribute("questionList");
+	String type = String.valueOf(session.getAttribute("type"));
+	int qnum = Integer.parseInt(String.valueOf(session.getAttribute("qnum")));
+	
+	QuestionDTO instance = qList.get(qnum);
+	
+	//qList.get(i).answer 이거 하면 답 번호 나옴
+%>
+>>>>>>> 1d58a0513c404af732a4eac71b62b002f2f15dba
 <br><br><br><br>
 	<script type="text/javascript" src="./js/main.js?ver=123">
 		alert(guess.equals(<%=qList.get(qnum).answer %>);
@@ -110,7 +129,11 @@
 			
 	%>
 		<div class="col-12" style="height:150px; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
+<<<<<<< HEAD
 			<img src = "<%=qList.get(qnum).questionContent%>" style = "width : 200px; border:3px solid black;">
+=======
+			<img src = "<%=qList.get(qnum).questionContent%>" style = "width : 200px;">
+>>>>>>> 1d58a0513c404af732a4eac71b62b002f2f15dba
 		</div>
 	<%
 		} else {
@@ -122,6 +145,7 @@
 		}
     %>
 		<br><br><br><br>
+<<<<<<< HEAD
 	<%
 		if (qnum < 9) {	
 	%>
@@ -139,8 +163,17 @@
             <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "3" onclick="compare(this.value)"><b>3. <%=qList.get(qnum).example3 %></b></button>
             <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "4" onclick="compare(this.value)"><b>4. <%=qList.get(qnum).example4 %></b></button>
             <input type="hidden" id="score" name="score">
+=======
+    <form method="post" action="#">
+        <div class="row g-3">
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "1"><b>1. <%=qList.get(qnum).example1 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "2"><b>2. <%=qList.get(qnum).example2 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "3"><b>3. <%=qList.get(qnum).example3 %></b></button>
+            <button class="w-100 btn-lg" style="background-color: white; color:#558DF0; border:3px solid #558DF0" name = "answer" value = "4"><b>4. <%=qList.get(qnum).example4 %></b></button>
+>>>>>>> 1d58a0513c404af732a4eac71b62b002f2f15dba
         </div><br><br>
     </form>
+    
 </div>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>

@@ -45,7 +45,6 @@
     		}
     		document.getElementById('score').value=score;
     	}
-    </script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" style="background-color: #558DF0;">
@@ -142,7 +141,6 @@
             <input type="hidden" id="score" name="score">
         </div><br><br>
     </form>
-    
 </div>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>
