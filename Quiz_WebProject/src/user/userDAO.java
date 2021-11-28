@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class userDAO {
     public static int login(String LoginID, String Password) {
-        String SQL = "SELECT Password FROM USERINFO WHERE LoginID = ?";
+        String SQL = "SELECT pwd FROM USERINFO WHERE LoginID = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null; 
@@ -41,8 +41,8 @@ public class userDAO {
     }
 
     public static String[] getInfo(String LoginID) {
-        String SQL = "SELECT UserName, LoginID, Password, Email, Age, Phone, NickName, Address, Date FROM USERINFO WHERE LoginID = ?";
-        String[] info = new String[7];
+        String SQL = "SELECT UserName, LoginID, pwd, Email, Age, Phone, NickName, Address, SignedDay FROM USERINFO WHERE LoginID = ?";
+        String[] info = new String[9];
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -149,7 +149,7 @@ public class userDAO {
     
     public static ArrayList<userDTO> getRanking() {
     	ArrayList<userDTO> userList = new ArrayList<userDTO>();
-    	String SQL = "SELECT * FROM USERINFO ORDER BY Rank DESC, Date ASC";
+    	String SQL = "SELECT * FROM USERINFO ORDER BY Score DESC, SignedDay ASC";
     	
     	try {
     		Connection conn = DBConnect.makeConn();

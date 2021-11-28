@@ -6,9 +6,17 @@
 <%   
    
 //public static void main(String[] args)
-   request.setCharacterEncoding("UTF-8");
-   //문제 갯수 지정
-   final int COUNT = 10;
+	request.setCharacterEncoding("UTF-8");
+
+	String userName = String.valueOf(session.getAttribute("UserName"));
+	
+	if (!userName.equals(null)) {
+		response.sendRedirect("../login.jsp");
+		return;
+	}
+	
+	//문제 갯수 지정
+	final int COUNT = 10;
 
    //qtype은 Link에서 getQuestion.jsp?type=n 형식으로 전달하자
    int qtype = Integer.parseInt(request.getParameter("type"));
