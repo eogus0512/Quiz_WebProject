@@ -9,5 +9,5 @@
 	
 	session.setAttribute("userList", userList);
 	
-	response.sendRedirect("ranking.jsp");
+	response.sendRedirect("../ranking.jsp");
 %>
