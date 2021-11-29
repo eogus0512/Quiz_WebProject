@@ -113,13 +113,14 @@
 <%
 			String cntAll, rank;
 			String ID = String.valueOf(session.getAttribute("LoginID"));
+			String nickName = String.valueOf(session.getAttribute("NickName"));
 			
 			cntAll=userDAO.countUser();
 			rank=userDAO.userRank(ID);
 			
             if(LoginID != null) {
 %>
-            <h3><%=UserName %>님은 <%=cntAll %>명 중 <%=rank %>등이에요!</h2>
+            <h3><%=nickName %>님은 <%=cntAll %>명 중 <%=rank %>등이에요!</h2>
 <%
             }
 %>

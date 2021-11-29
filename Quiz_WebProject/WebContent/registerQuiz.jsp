@@ -75,7 +75,6 @@
                     <option disable hidden>선택</option>
                     <option value = "1">수도</option>
                     <option value = "2">상식</option>
-                    <option>넌센스</option>
                     <option value = "3">역사</option>
                 </select>
             </div>
