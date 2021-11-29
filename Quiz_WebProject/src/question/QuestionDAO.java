@@ -137,18 +137,4 @@ public class QuestionDAO {
 			return -1;
 		}
 	}
-	public static int addScore(String Score, String LoginID) {
-		String SQL = "UPDATE USERINFO SET Score = Score + ? WHERE LoginID = ?";
-
-        try {
-            Connection conn = DBConnect.makeConn();
-            PreparedStatement pstmt = conn.prepareStatement(SQL);
-            pstmt.setString(1, Score);
-            pstmt.setString(2, LoginID);
-            return pstmt.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return -1;
-	}
 }

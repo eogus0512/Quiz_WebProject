@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import = "question.*" %>
+<%@ page import = "user.*" %>
 <%@ page import = "java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
@@ -66,28 +67,42 @@
 <br><br><br><br>
 <div class="py-5 text-center">
 </div>
-<div class="container col-md-4">
-	<br><br><br><br><Br><br>
-	<h1>당신의 점수는 10점 만점의 <%=request.getParameter("score") %>점!!</h1>
-
-</div>
+<div class="container col-md-4" style="text-align:center">
+	<br><br><br><br>
+	<h1>당신의 점수는 10점 만점의 <%=request.getParameter("score") %>점!!</h1><br><br>
 <%
 	String Score = request.getParameter("score");
 	String ID = String.valueOf(session.getAttribute("LoginID"));
-	int result;
+	int result1;
+	String result2;
 	
-	result = QuestionDAO.addScore(Score, ID);
-	if(result == 1) {
+	result1 = userDAO.addScore(Score, ID);
+	if(result1 == 1) {
 		session.setAttribute("score", 0);
 	} else {
 		PrintWriter script = response.getWriter();
 	    script.println("<script>");
-	    script.println("alert('데이터베이스 오류');");
+	    script.println("alert('update 데이터베이스 오류');");
+	    script.println("history.back();");
+	    script.println("</script>");
+	    script.close();
+	}
+	
+	result2 = userDAO.searchScore(ID);
+	if(result2 != null) {
+%>
+	<h2><%=UserName %>님의 총 점수 : <%=result2 %></h2>
+<%
+	} else {
+		PrintWriter script = response.getWriter();
+	    script.println("<script>");
+	    script.println("alert('select 데이터베이스 오류');");
 	    script.println("history.back();");
 	    script.println("</script>");
 	    script.close();
 	}
 %>
+</div>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.

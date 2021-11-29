@@ -104,11 +104,10 @@
     </button>
 </div><br><br>
 <div class="container-xxl d-flex" style="width:820px; margin: auto;">
-	<a class="btn" href="action/getQuestion.jsp?type=0" style="width:170px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>국기</b></a>
-	<a class="btn" href="action/getQuestion.jsp?type=1" style="width:170px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>수도</b></a>
-	<a class="btn" href="action/getQuestion.jsp?type=2" style="width:170px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>상식</b></a>
-	<a class="btn" href="solveQuiz.jsp" style="width:170px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>넌센스</b></a>
-	<a class="btn" href="action/getQuestion.jsp?type=3" style="width:170px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>한국사</b></a>
+	<a class="btn" href="action/getQuestion.jsp?type=0" style="width:210px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>국기</b></a>
+	<a class="btn" href="action/getQuestion.jsp?type=1" style="width:210px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>수도</b></a>
+	<a class="btn" href="action/getQuestion.jsp?type=2" style="width:210px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>상식</b></a>
+	<a class="btn" href="action/getQuestion.jsp?type=3" style="width:210px; height:50px; border-radius: 5px; font-size:15pt; background-color:#558DF0; color:white; padding:10px; margin:7px"><b>한국사</b></a>
 </div><br>
 <div class="container-xxl d-flex" style="width:800px; margin: auto;">
 	<a class="btn" href="action/getRank.jsp" style="width:400px; height:70px; border-width:3px; border-color:#558DF0; border-radius: 5px 0px 0px 5px; font-size:20pt; color:#558DF0; padding:12px"><b>랭킹</b></a>

@@ -161,7 +161,7 @@
 			
 	%>
 		<div class="col-12" style="height:150px; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
-			<img src = "<%=qList.get(qnum).questionContent%>" style = "width : 200px; border:3px solid black;">
+			<img src = "<%=qList.get(qnum).questionContent%>" style = "width: 250px; height:150px; border:3px solid black;">
 		</div>
 	<%
 		} else {

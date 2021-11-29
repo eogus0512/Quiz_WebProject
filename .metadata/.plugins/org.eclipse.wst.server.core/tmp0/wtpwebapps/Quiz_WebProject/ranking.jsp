@@ -61,31 +61,72 @@
             %>
         </div>
     </div>
-</nav>
+</nav><br><br><br><br><br><br>
 <%
 	@SuppressWarnings("unchecked")
 	ArrayList<userDTO> userList = (ArrayList<userDTO>)(session.getAttribute("userList"));
-
-	
 	
 %>
-<br><br><br><br><br><br><br><br><br><br><br>
-<section class="container" style="max-width:500px;">
-
+<div class="container col-md-4" style="text-align:center">
+	<h2><img src="img/crown.png" style="width:40px;">&nbsp;<b>랭킹</b></h2><hr class="my-4"><br><br>
+	<table style="margin:0 auto; width:500px;text-align:center;">
+		
 <% 
 	try {
 		for (int i = 0; i < 5; i ++) {
 			String nickName = userList.get(i).NickName;
 %>
-		<%=i + 1 %>위 유저 이름 : <%=nickName %> <br>
+		<tr>
+<% 
+			if (i==0) {
+%>
+			<td style="background-color:gold; font-size:25px; border-radius:10px; width:60px; height:60px; color:white"><b><%=i + 1  %><b></b></td>
+<%
+			} else if (i==1) {
+%>
+			<td style="background-color:silver; font-size:25px; border-radius:10px; width:60px; height:60px; color:white"><b><%=i + 1  %><b></b></td>
+<%
+			} else if (i==2) {
+%>
+			<td style="background-color:#624637; font-size:25px; border-radius:10px; width:60px; height:60px; color:white"><b><%=i + 1  %><b></b></td>
+<%
+			} else {
+%>
+			<td style="background-color:#558DF0; font-size:25px; border-radius:10px; width:60px; height:60px; color:white"><b><%=i + 1  %><b></b></td>
+<%
+			}
+%>
+			<td style="font-size:25px; width:440px"><%=nickName %></td>
+		</tr>
+		<tr>
+			<td style="height:30px"></td>
+			<td></td>
+		</tr>
 <%
 		}
 	} catch (Exception e) {
 		
 	}
+		
+%>
+	</table><br><br><br>
+<%
+			String cntAll, rank;
+			String ID = String.valueOf(session.getAttribute("LoginID"));
+			
+			cntAll=userDAO.countUser();
+			rank=userDAO.userRank(ID);
+			
+            if(LoginID != null) {
+%>
+            <h3><%=UserName %>님은 <%=cntAll %>명 중 <%=rank %>등이에요!</h2>
+<%
+            }
 %>
 
-</section>
+	
+
+</div>
 <br><br><br><br><br><br><br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>

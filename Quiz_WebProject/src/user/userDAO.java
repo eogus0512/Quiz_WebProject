@@ -169,4 +169,78 @@ public class userDAO {
           return null;
        }
     }
+    
+    public static int addScore(String Score, String LoginID) {
+		String SQL = "UPDATE USERINFO SET Score = Score + ? WHERE LoginID = ?";
+
+        try {
+            Connection conn = DBConnect.makeConn();
+            PreparedStatement pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, Score);
+            pstmt.setString(2, LoginID);
+            return pstmt.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+	}
+    
+    public static String searchScore(String LoginID) {
+        String SQL = "SELECT Score FROM USERINFO WHERE LoginID = ?";
+        Connection conn = null;
+        String Score = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = DBConnect.makeConn();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, LoginID);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                Score = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Score;
+    }
+    
+    public static String countUser() {
+        String SQL = "SELECT COUNT(*) FROM USERINFO";
+        Connection conn = null;
+        String count = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = DBConnect.makeConn();
+            pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+            	count = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    
+    public static String userRank(String LoginID) {
+        String SQL = "SELECT RANK() OVER (ORDER BY Score DESC) FROM USERINFO WHERE LoginID=?";
+        Connection conn = null;
+        String count = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = DBConnect.makeConn();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, LoginID);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+            	count = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
 }
