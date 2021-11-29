@@ -127,7 +127,7 @@ public class userDAO {
         return false;
     }
 
-    public static String getNickName(String UserID) {
+    public static String getNickName(Integer UserID) {
         String SQL = "SELECT NickName FROM USERINFO WHERE UserID = ?";
         Connection conn = null;
         String Nickname = null;
@@ -136,7 +136,7 @@ public class userDAO {
         try {
             conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
-            pstmt.setString(1, UserID);
+            pstmt.setInt(1, UserID);
             rs = pstmt.executeQuery();
             if(rs.next()) {
                 Nickname = rs.getString(1);

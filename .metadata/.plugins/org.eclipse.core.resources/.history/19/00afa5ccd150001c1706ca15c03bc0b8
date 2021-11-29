@@ -116,6 +116,7 @@
 			int userLoc = 0;
 			
 			cntAll=userDAO.countUser();
+			rank=userDAO.userRank(ID);
 			
 			for (int i = 0; i < userList.size(); i++) {
 				if (userList.get(i).LoginID.equals(String.valueOf(session.getAttribute("LoginID")))) {

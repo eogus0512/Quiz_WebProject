@@ -111,11 +111,12 @@
 %>
 	</table><br><br><br>
 <%
-			String cntAll, rank;
+			String cntAll, nickname;
 			String ID = String.valueOf(session.getAttribute("LoginID"));
 			int userLoc = 0;
 			
 			cntAll=userDAO.countUser();
+			getNickName(ID);
 			
 			for (int i = 0; i < userList.size(); i++) {
 				if (userList.get(i).LoginID.equals(String.valueOf(session.getAttribute("LoginID")))) {

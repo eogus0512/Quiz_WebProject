@@ -127,7 +127,7 @@ public class userDAO {
         return false;
     }
 
-    public static String getNickName(String UserID) {
+    public static String getNickName(Integer UserID) {
         String SQL = "SELECT NickName FROM USERINFO WHERE UserID = ?";
         Connection conn = null;
         String Nickname = null;
@@ -136,7 +136,7 @@ public class userDAO {
         try {
             conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
-            pstmt.setString(1, UserID);
+            pstmt.setInt(1, UserID);
             rs = pstmt.executeQuery();
             if(rs.next()) {
                 Nickname = rs.getString(1);
@@ -214,6 +214,26 @@ public class userDAO {
         try {
             conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+            	count = rs.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    
+    public static String userRank(String LoginID) {
+        String SQL = "SELECT RANK() OVER (ORDER BY Score DESC) FROM USERINFO WHERE LoginID=?";
+        Connection conn = null;
+        String count = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            conn = DBConnect.makeConn();
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, LoginID);
             rs = pstmt.executeQuery();
             if(rs.next()) {
             	count = rs.getString(1);

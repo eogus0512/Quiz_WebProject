@@ -136,7 +136,7 @@ public class userDAO {
         try {
             conn = DBConnect.makeConn();
             pstmt = conn.prepareStatement(SQL);
-            pstmt.setString(1, UserID);
+            pstmt.setInt(1, UserID);
             rs = pstmt.executeQuery();
             if(rs.next()) {
                 Nickname = rs.getString(1);

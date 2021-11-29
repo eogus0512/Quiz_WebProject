@@ -111,7 +111,7 @@
 %>
 	</table><br><br><br>
 <%
-			String cntAll, rank;
+			String cntAll;
 			String ID = String.valueOf(session.getAttribute("LoginID"));
 			int userLoc = 0;
 			

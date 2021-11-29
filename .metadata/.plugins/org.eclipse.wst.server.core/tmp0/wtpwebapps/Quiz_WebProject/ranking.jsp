@@ -113,13 +113,20 @@
 <%
 			String cntAll, rank;
 			String ID = String.valueOf(session.getAttribute("LoginID"));
+			int userLoc = 0;
 			
 			cntAll=userDAO.countUser();
-			rank=userDAO.userRank(ID);
+			
+			for (int i = 0; i < userList.size(); i++) {
+				if (userList.get(i).LoginID.equals(String.valueOf(session.getAttribute("LoginID")))) {
+					userLoc = i + 1;
+					break;
+				}
+			}
 			
             if(LoginID != null) {
 %>
-            <h3><%=UserName %>님은 <%=cntAll %>명 중 <%=rank %>등이에요!</h2>
+            <h3><%=UserName %>님은 <%=cntAll %>명 중 <%=userLoc %>등이에요!</h2>
 <%
             }
 %>
