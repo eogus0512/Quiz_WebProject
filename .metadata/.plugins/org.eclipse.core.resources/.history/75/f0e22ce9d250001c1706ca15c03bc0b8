@@ -113,8 +113,11 @@
 <%
 			String cntAll, rank;
 			String ID = String.valueOf(session.getAttribute("LoginID"));
+<<<<<<< HEAD
 			int userLoc = 0;
+=======
 			String nickName = String.valueOf(session.getAttribute("NickName"));
+>>>>>>> ab5f873f7b4b5245958599073ee66af899253433
 			
 			cntAll=userDAO.countUser();
 			
@@ -127,7 +130,11 @@
 			
             if(LoginID != null) {
 %>
+<<<<<<< HEAD
             <h3><%=UserName %>님은 <%=cntAll %>명 중 <%=userLoc %>등이에요!</h2>
+=======
+            <h3><%=nickName %>님은 <%=cntAll %>명 중 <%=rank %>등이에요!</h2>
+>>>>>>> ab5f873f7b4b5245958599073ee66af899253433
 <%
             }
 %>

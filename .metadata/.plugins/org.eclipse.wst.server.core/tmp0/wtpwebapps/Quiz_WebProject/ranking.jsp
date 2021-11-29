@@ -114,6 +114,7 @@
 			String cntAll, rank;
 			String ID = String.valueOf(session.getAttribute("LoginID"));
 			int userLoc = 0;
+			String nickName = String.valueOf(session.getAttribute("NickName"));
 			
 			cntAll=userDAO.countUser();
 			

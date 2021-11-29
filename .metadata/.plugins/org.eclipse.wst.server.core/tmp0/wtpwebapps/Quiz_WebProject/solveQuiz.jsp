@@ -16,8 +16,6 @@
 	
 	QuestionDTO instance = qList.get(qnum);
 	
-	System.out.println(instance.questionNumber);
-	
 	//qList.get(i).answer 이거 하면 답 번호 나옴
 %>
 <!DOCTYPE html>
