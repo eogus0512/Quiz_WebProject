@@ -127,7 +127,7 @@
 			
             if(LoginID != null) {
 %>
-            <h3><%=nickName %>님은 <%=cntAll %>명 중 <%=userLoc %>등이에요!</h2>
+            <h3><%=UserName %>님은 <%=cntAll %>명 중 <%=userLoc %>등이에요!</h2>
 <%
             }
 %>

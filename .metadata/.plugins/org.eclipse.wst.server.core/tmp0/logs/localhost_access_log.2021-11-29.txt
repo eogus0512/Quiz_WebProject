@@ -1903,3 +1903,8 @@
 0:0:0:0:0:0:0:1 - - [29/Nov/2021:14:10:18 +0900] "GET /Quiz_WebProject/action/getRank.jsp HTTP/1.1" 302 -
 0:0:0:0:0:0:0:1 - - [29/Nov/2021:14:10:19 +0900] "GET /Quiz_WebProject/ranking.jsp HTTP/1.1" 200 4163
 0:0:0:0:0:0:0:1 - - [29/Nov/2021:14:10:19 +0900] "GET /Quiz_WebProject/img/crown.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [29/Nov/2021:14:12:29 +0900] "GET /Quiz_WebProject/ranking.jsp HTTP/1.1" 200 4163
+0:0:0:0:0:0:0:1 - - [29/Nov/2021:14:12:32 +0900] "GET /Quiz_WebProject/index.jsp HTTP/1.1" 200 6046
+0:0:0:0:0:0:0:1 - - [29/Nov/2021:14:12:33 +0900] "GET /Quiz_WebProject/action/getRank.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [29/Nov/2021:14:12:33 +0900] "GET /Quiz_WebProject/ranking.jsp HTTP/1.1" 200 4163
+0:0:0:0:0:0:0:1 - - [29/Nov/2021:14:12:51 +0900] "GET /Quiz_WebProject/ranking.jsp HTTP/1.1" 200 4172
