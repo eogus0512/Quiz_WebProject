@@ -34,16 +34,16 @@
 			transition-duration: 0.5s;
 			transform: translateX(-50%) translateY(-50%);
 			border-radius: 50%;
-			border: 50px solid blue;
+			border: 50px solid #558DF0;
 	    }
 	    .digonal1 {
 	    	position: fixed;
-			background-color: red;
+			background-color: #D65046;
 			transform: rotate(-45deg);
 		}
 		.digonal2 {
 	    	position: fixed;
-			background-color: red;
+			background-color: #D65046;
 			transform: rotate(45deg);
 		}
 	</style>
@@ -66,7 +66,7 @@
 			let div1 = document.createElement('div1');
 			div1.style.width = 0;
 			div1.style.height = 0;
-			div1.style.left = '50%';
+			div1.style.left = '49%';
 			div1.style.top = '20%';
 			div1.className = 'digonal1';
 			document.body.append(div1);
@@ -76,7 +76,7 @@
 			let div2 = document.createElement('div2');
 			div2.style.width = 0;
 			div2.style.height = 0;
-			div2.style.left = '50%';
+			div2.style.left = '49%';
 			div2.style.top = '20%';
 			div2.className = 'digonal2';
 			document.body.append(div2);

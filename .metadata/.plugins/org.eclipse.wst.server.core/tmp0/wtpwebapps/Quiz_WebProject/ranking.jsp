@@ -68,7 +68,7 @@
 	
 %>
 <div class="container col-md-4" style="text-align:center">
-	<h2><img src="img/crown.png" style="width:40px;">&nbsp;<b>랭킹</b></h2><hr class="my-4"><br><br>
+	<h2><img src="img/rank.png" style="width:40px;">&nbsp;<b>랭킹</b></h2><hr class="my-4"><br><br>
 	<table style="margin:0 auto; width:500px;text-align:center;">
 		
 <% 
@@ -88,7 +88,7 @@
 <%
 			} else if (i==2) {
 %>
-			<td style="background-color:#624637; font-size:25px; border-radius:10px; width:60px; height:60px; color:white"><b><%=i + 1  %><b></b></td>
+			<td style="background-color:#c89072; font-size:25px; border-radius:10px; width:60px; height:60px; color:white"><b><%=i + 1  %><b></b></td>
 <%
 			} else {
 %>

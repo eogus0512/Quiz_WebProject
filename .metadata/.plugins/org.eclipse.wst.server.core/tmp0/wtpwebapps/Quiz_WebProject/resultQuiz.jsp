@@ -68,9 +68,33 @@
 <div class="py-5 text-center">
 </div>
 <div class="container col-md-4" style="text-align:center">
-	<br><br><br><br>
-	<h1>당신의 점수는 10점 만점의 <%=request.getParameter("score") %>점!!</h1><br><br>
 <%
+	int score = Integer.parseInt(request.getParameter("score"));
+	if(score>=8) {
+%>
+	<h2 style="color:#B3E59F"><b>&nbsp;GOOD!</b></h2>
+	<img src="img/excellent.png" style="width: 300px;height:300px">
+	<div class="col-12" style="height:100px; padding:30px; background-color: #B3E59F; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
+			 <label class="form-label" style="color:white; font-size:30px;">당신의 점수는 10점 만점의 <%=score %>점</label>
+	</div>
+<%
+	} else if(score>=3 && score<=7) { 
+%>
+	<h2 style="color:#FFE07D"><b>&nbsp;NOT BAD!</b></h2>
+	<img src="img/good.png" style="width: 300px;height:300px">
+	<div class="col-12" style="height:100px; padding:30px; background-color: #FFE07D; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
+			 <label class="form-label" style="color:white; font-size:30px;">당신의 점수는 10점 만점의 <%=score %>점</label>
+	</div>
+<%
+	} else {
+%>
+	<h2 style="color:#DA387D"><b>&nbsp;BAD!</b></h2>
+	<img src="img/bad.png" style="width: 300px;height:300px">
+	<div class="col-12" style="height:100px; padding:30px; background-color: #DA387D; text-align:center; font-size:25px; font-weight:bold; border-radius:5px">
+			 <label class="form-label" style="color:white; font-size:30px;">당신의 점수는 10점 만점의 <%=score %>점</label>
+	</div>
+<%
+	}
 	String Score = request.getParameter("score");
 	String ID = String.valueOf(session.getAttribute("LoginID"));
 	int result1;
@@ -91,7 +115,7 @@
 	result2 = userDAO.searchScore(ID);
 	if(result2 != null) {
 %>
-	<h2><%=UserName %>님의 총 점수 : <%=result2 %></h2>
+	<br><br><br><h2><%=UserName %>님의 총 점수 : <%=result2 %>점</h2>
 <%
 	} else {
 		PrintWriter script = response.getWriter();
@@ -102,7 +126,9 @@
 	    script.close();
 	}
 %>
-</div>
+	<br><br><br><br>
+	<a href="ranking.jsp" style="color:black; font-size:30px;">랭킹 확인하러가기</a>
+</div><br><br><br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>
     Copyright &copy; 2021 ddolI98 All Rights Reserved.
