@@ -58,8 +58,8 @@
 		    document.body.append(div);
 
 		    setTimeout(() => {
-		      div.style.width = '600px';
-		      div.style.height = '600px';
+		      div.style.width = '400px';
+		      div.style.height = '400px';
 		    }, 0);
 		}
 		function showDiagonal() {
@@ -71,7 +71,7 @@
 			div1.className = 'digonal1';
 			document.body.append(div1);
 			div1.style.width = '50px';
-			div1.style.height = '600px';
+			div1.style.height = '400px';
 			
 			let div2 = document.createElement('div2');
 			div2.style.width = 0;
@@ -81,7 +81,7 @@
 			div2.className = 'digonal2';
 			document.body.append(div2);
 			div2.style.width = '50px';
-			div2.style.height = '600px';
+			div2.style.height = '400px';
 		}
 		function compare(guess)  {
     		var answer="<%=String.valueOf(qList.get(qnum).answer)%>";
