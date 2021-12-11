@@ -21,8 +21,6 @@ public class BoardDAO {
 			
 			//글이 써진 날짜는 오늘 날짜로.
  			instance.postedDate = String.valueOf(LocalDate.now());
- 		
-			
 			
 			
 			SQL = "INSERT INTO POSTLIST VALUES(?, ?, ?, ?, ?)";
@@ -33,6 +31,7 @@ public class BoardDAO {
 			pstmt.setString(3, instance.header);
 			pstmt.setString(4, instance.content);
 			pstmt.setString(5, instance.postedDate);
+			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			System.out.println("makeBoard에서 DB 연결에 실패하였습니다");

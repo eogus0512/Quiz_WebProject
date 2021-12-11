@@ -1,0 +1,56 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import = "question.*" %>
+<%@ page import = "java.util.ArrayList" %>
+<!DOCTYPE html>
+<html>
+<head>
+	    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="icon" href="./img/favicon.png">
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>동퀴콘</title>
+    <script>
+      var modal=document.getElementById('myModal');
+
+      var img = document.getElementById('imgPre');
+      img.onclick=function(){
+        modal.style.display="block";
+      }
+
+      window.onclick = function(event){
+        if(event.target==modal){
+          modal.style.display="non";
+        }
+      }
+
+    </script>
+</head>
+<body>
+<div class="container justify-content-between align-items-center">
+<div class="container">
+  <h2>Small Modal</h2>
+
+  <div class="form-group">
+    <img class="thumbnail img-preview" id="imgPre" >
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <!--Modal content-->
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>모달창</p>
+      <hr />
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+    

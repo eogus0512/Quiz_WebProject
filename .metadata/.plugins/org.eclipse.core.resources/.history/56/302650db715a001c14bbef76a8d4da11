@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "board.*"%>
+<%
+//public static void main(String[] args])
+	request.setCharacterEncoding("UTF-8");
+
+	BoardDTO forInsert = new BoardDTO();
+	
+	forInsert.header = request.getParameter("header");
+	System.out.println(forInsert.header);
+	forInsert.content = request.getParameter("contents");
+	System.out.println(forInsert.content);
+	forInsert.nickName = String.valueOf(session.getAttribute("NickName"));
+	System.out.println(forInsert.nickName);
+	
+
+	BoardDAO.makePost(forInsert);
+	
+	response.sendRedirect("../board.jsp");
+			
+%>

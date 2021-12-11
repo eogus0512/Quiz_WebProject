@@ -111,7 +111,7 @@
 </div><br>
 <div class="container-xxl d-flex" style="width:800px; margin: auto;">
 	<a class="btn" href="action/getRank.jsp" style="width:400px; height:70px; border-width:3px; border-color:#558DF0; border-radius: 5px 0px 0px 5px; font-size:20pt; color:#558DF0; padding:12px"><b>랭킹</b></a>
-	<a class="btn" href="#" style="width:400px; height:70px; border-radius: 0px 5px 5px 0px; font-size:20pt; color:white; background-color: #558DF0; padding:12px"><b>게시판</b></a>
+	<a class="btn" href="board.jsp" style="width:400px; height:70px; border-radius: 0px 5px 5px 0px; font-size:20pt; color:white; background-color: #558DF0; padding:12px"><b>게시판</b></a>
 </div><br><br><br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>

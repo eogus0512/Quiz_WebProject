@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "board.*"%>
+<%
+//public static void main(String[] args])
+	request.setCharacterEncoding("UTF-8");
+
+	int type = Integer.parseInt(request.getParameter("type"));
+	BoardDTO forInsert = new BoardDTO();
+	
+	forInsert.header = request.getParameter("header");
+	forInsert.content = request.getParameter("contents");
+	
+
+	BoardDAO.makePost(forInsert);
+	
+	if (result == 1) {
+		session.setAttribute("result", "success");
+		response.sendRedirect("../index.jsp");
+	}
+	
+	if (result == 0) {
+		session.setAttribute("result", "maxNotFound");
+		response.sendRedirect("../index.jsp");
+	}
+	
+	else if (result == -1) {
+		session.setAttribute("result", "failed");
+		response.sendRedirect("../index.jsp");
+	}		
+%>
