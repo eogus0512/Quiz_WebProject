@@ -10,8 +10,7 @@
 	  NickName = (String) request.getParameter("NickName");
   }
 
-  userDAO userdao = new userDAO();
-  boolean result = userdao.checkNickName(NickName);
+  boolean result = userDAO.checkNickName(NickName);
   if(result) {
     PrintWriter script = response.getWriter();
     script.println("<script>");

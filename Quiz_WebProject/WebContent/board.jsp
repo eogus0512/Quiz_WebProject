@@ -92,7 +92,7 @@
 	String nickName= list.get(i).nickName;
 	if(nickName.equals(session.getAttribute("NickName"))) {
 	%>
-	<a href=""><img src="img/trash.png" style="width:20px; height:20px;"></a>
+	<a href="action/deletePost.jsp?num=<%=list.get(i).postNum%>"><img src="img/trash.png" style="width:20px; height:20px;"></a>
 	<%
 	} else {
 	%>

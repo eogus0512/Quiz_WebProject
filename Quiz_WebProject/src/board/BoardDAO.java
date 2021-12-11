@@ -66,4 +66,25 @@ public class BoardDAO {
 		//ArrayList에 반환.
 		return postList;
 	}
+	
+	public static int deletePost(String postNum) {
+		try {
+			Connection conn = DBConnect.makeConn();
+			String SQL = "DELETE FROM POSTLIST WHERE PostNum = ?";
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, postNum);
+			
+			if (pstmt.executeUpdate() != 0) 
+				return 0;
+			else
+				return -1;
+			
+			
+		} catch (SQLException e) {
+			return -2;
+		}
+		
+		
+		
+	}
 }
