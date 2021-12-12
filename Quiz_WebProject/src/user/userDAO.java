@@ -67,6 +67,26 @@ public class userDAO {
         }
         return info;
     }
+    
+    public static void setUserInfo(userDTO instance) {
+    	try {
+    		Connection conn = DBConnect.makeConn();
+    		String SQL = "UPDATE USERINFO SET pwd = ?, Email = ?, Age = ?, Phone = ?, Address = ? WHERE LoginID = ?";
+    		PreparedStatement pstmt = conn.prepareStatement(SQL); 
+    		
+    		pstmt.setString(1, instance.Password);
+    		pstmt.setString(2, instance.Email);
+    		pstmt.setString(3, instance.Age);
+    		pstmt.setString(4, instance.Phone);
+    		pstmt.setString(5, instance.Address);
+    		pstmt.setString(6, instance.LoginID);
+    		
+    		pstmt.executeUpdate();
+    	} catch(SQLException e) {
+    		System.out.println("DBì—°ê²° ì˜¤ë¥˜");
+    	}
+    	
+    }
 
     public static int join(String UserName, String LoginID, String Password, String Email, String Age, String Phone, String NickName, String Address) {
        LocalDate time = LocalDate.now();
@@ -164,7 +184,7 @@ public class userDAO {
           
           return userList;
        } catch (SQLException e) {
-          System.out.println("getRanking¿¡¼­ ¿À·ù ¹ß»ı");
+          System.out.println("getRanking ë©”ì†Œë“œì—ì„œ ì˜¤ë¥˜");
           e.printStackTrace();
           return null;
        }

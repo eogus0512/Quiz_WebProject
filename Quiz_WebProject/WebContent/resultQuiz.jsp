@@ -127,7 +127,7 @@
 	}
 %>
 	<br><br><br><br>
-	<a href="ranking.jsp" style="color:black; font-size:30px;">랭킹 확인하러가기</a>
+	<a href="ranking.jsp" style="color:black; font-size:30px;">랭킹 확인하러 가기</a>
 </div><br><br><br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>
