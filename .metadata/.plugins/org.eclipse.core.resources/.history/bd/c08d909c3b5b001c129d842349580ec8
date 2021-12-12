@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    	pageEncoding="UTF-8"%>
+<%@ page import = "user.*" %>
+<%
+	request.setCharacterEncoding("UTF-8");
+	userDTO instance = new userDTO();
+	instance.LoginID = String.valueOf(session.getAttribute("LoginID"));
+	instance.Password = request.getParameter("Password");
+	instance.Address = "(" + (String) request.getParameter("postCode") + ") " +
+            (String) request.getParameter("address") + " " +
+    		(String) request.getParameter("detailAddress") +
+            (String) request.getParameter("extraAddress");
+	instance.Age = request.getParameter("Age");
+	instance.Email = request.getParameter("Email");
+	instance.Phone = request.getParameter("Phone");
+	
+	System.out.println(instance.LoginID);
+	System.out.println(instance.Password);
+	System.out.println(instance.Address);
+	System.out.println(instance.Age);
+	System.out.println(instance.Email);
+	System.out.println(instance.Phone);
+	
+	
+	userDAO.setUserInfo(instance);
+	
+	response.sendRedirect("../index.jsp");
+%>

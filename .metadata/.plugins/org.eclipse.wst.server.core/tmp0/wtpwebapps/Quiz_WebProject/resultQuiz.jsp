@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="font-size:15pt; color:white;"><b>퀴즈 시작하기</b></a>
+                    <a class="nav-link" href="action/getQuestion.jsp?type=4" style="font-size:15pt; color:white;"><b>퀴즈 시작하기</b></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="registerQuiz.jsp" style="font-size:15pt; color:white;"><b>퀴즈 만들기</b></a>
@@ -127,11 +127,11 @@
 	}
 %>
 	<br><br><br><br>
-	<a href="ranking.jsp" style="color:black; font-size:30px;">랭킹 확인하러가기</a>
+	<a href="ranking.jsp" style="color:black; font-size:30px;">랭킹 확인하러 가기</a>
 </div><br><br><br><br>
 <footer class="bg-light mt-4 p-5 text-center" style="color: #000000;">
     2017112079 윤대현<br>2017112066 정호종<br>
-    Copyright &copy; 2021 ddolI98 All Rights Reserved.
+    Copyright &copy; 2021 동퀴콘개발팀 All Rights Reserved.
 </footer>
 <script src="./js/jquery.min.js"></script>
 <script src="./js/popper.js"></script>

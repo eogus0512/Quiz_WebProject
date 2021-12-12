@@ -80,6 +80,7 @@ public class userDAO {
     		pstmt.setString(4, instance.Phone);
     		pstmt.setString(5, instance.Address);
     		pstmt.setString(6, instance.LoginID);
+    		System.out.println(instance.Address);
     		
     		pstmt.executeUpdate();
     	} catch(SQLException e) {
