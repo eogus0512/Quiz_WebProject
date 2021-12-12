@@ -73,11 +73,10 @@
         <input type="password" class="form-control" name="password" id="password" placeholder="Password" style="border-radius: 0px 0px 5px 5px;">
         <label for="password">Password</label>
     </div>
-    
+    <button class="btn btn col-6" type="button" onclick="location.href='signUp.jsp'" style="background-color: #FFFFFF; float:right; text-align:right"><b>회원가입</b></button>
     <br>
     <button class="w-100 btn btn-lg btn" type="submit" style="background-color: #558DF0; color:white"><b>로그인</b></button>
     <br><br>
-    <a href="signUp.jsp" style="color:black;"><b>회원가입</b></a>
     
 </form>
 </section>
