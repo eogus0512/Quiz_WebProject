@@ -73,43 +73,58 @@
 
 	<div class="row mb-3">
 	<%
-		for (int i = 0; i < list.size(); i++) {
+		for (int i = (list.size() - 1); i >= 0; i--) {
 	%>
-		<div class="col-md-4">
-			<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-				<div class="col p-4 d-flex flex-column position-static">
-					<strong class="d-inline-block mb-2 text-primary"><%=list.get(i).postNum%></strong>
-					<div class="d-flex justify-content-between align-items-center">
-						<h3 class="mb-0"><%=list.get(i).header%></h3>
-						<small class="text-muted"><%=list.get(i).nickName%></small>
-	    </div>
-	
-	<div style="height:100px;">
-	<p class="card-text mb-auto"><%=list.get(i).content%></p>
+	<div class="col-md-4">
+		<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+			<div class="col p-4 d-flex flex-column position-static">
+				<strong class="d-inline-block mb-2 text-primary"><%=list.get(i).postNum%></strong>
+				<div class="d-flex justify-content-between align-items-center">
+					<h3 class="mb-0"><%=list.get(i).header%></h3>
+					<small class="text-muted"><%=list.get(i).nickName%></small>
+    			</div>
+				<div style="height:100px;">
+					<p class="card-text mb-auto"><%=list.get(i).content%></p>
+				</div>
+				<div class="d-flex justify-content-between align-items-center">
+					<%
+					String nickName= list.get(i).nickName;
+					if(nickName.equals(session.getAttribute("NickName"))) {
+					%>
+					<a href="action/deletePost.jsp?num=<%=list.get(i).postNum%>"><img src="img/trash.png" style="width:20px; height:20px;"></a>
+					<%
+					} else {
+					%>
+					<a href=""><img src="img/blank.PNG" style="width:20px; height:20px;"></a>
+					<%
+					}
+					            %>
+					<small class="text-muted"><%=list.get(i).postedDate%></small>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="d-flex justify-content-between align-items-center">
-	<%
-	String nickName= list.get(i).nickName;
-	if(nickName.equals(session.getAttribute("NickName"))) {
-	%>
-	<a href=""><img src="img/trash.png" style="width:20px; height:20px;"></a>
-	<%
-	} else {
-	%>
-	<a href=""><img src="img/blank.PNG" style="width:20px; height:20px;"></a>
 	<%
 	}
-	            %>
-	<small class="text-muted"><%=list.get(i).postedDate%></small>
-	          </div>
-	    </div>
-	  </div>
-	</div>
-	<%
-	}
 	%>
 	</div>
-	<button type="button"  data-bs-toggle="modal" data-bs-target="#wrtPost" class="btn mb-3" style="background-color:#558DF0; color:white;">글쓰기</button>
+	<%
+		if(session.getAttribute("loginID") != null) {
+	%>
+	<button type="button" data-bs-toggle="modal" data-bs-target="#wrtPost" class="btn mb-3" style="background-color:#558DF0; color:white;">글쓰기</button>
+	<%
+		} else {
+	%>
+	<button type="button" class="btn mb-3" style="background-color:#558DF0; color:white;" onclick="toLogin()">글쓰기</button>
+	<script>
+		function toLogin() {
+			alert("로그인이 필요한 서비스입니다.");
+			location.href = "login.jsp";
+		}
+	</script>
+	<%
+		}
+	%>
 	<div class="modal fade" id="wrtPost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	    <div class="modal-dialog modal-dialog-centered">
 	        <div class="modal-content">
